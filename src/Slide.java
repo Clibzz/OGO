@@ -19,12 +19,12 @@ public class Slide {
 	protected Vector<SlideItem> items; //The SlideItems are kept in a vector
 
 	public Slide() {
-		items = new Vector<>();
+		this.items = new Vector<>();
 	}
 
 	//Add a SlideItem
 	public void append(SlideItem anItem) {
-		items.add(anItem);
+		this.items.add(anItem);
 	}
 
 	//Return the title of a slide
@@ -44,12 +44,12 @@ public class Slide {
 
 	//Return all the SlideItems in a vector
 	public Vector<SlideItem> getSlideItems() {
-		return items;
+		return this.items;
 	}
 
 	//Returns the size of a slide
 	public int getSize() {
-		return items.size();
+		return this.items.size();
 	}
 
 	//Draws the slide

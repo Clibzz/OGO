@@ -12,10 +12,10 @@ import java.awt.event.KeyAdapter;
 */
 
 public class KeyController extends KeyAdapter {
-	private Presentation presentation; //Commands are given to the presentation
+	private final Presentation presentation; //Commands are given to the presentation
 
 	public KeyController(Presentation p) {
-		presentation = p;
+		this.presentation = p;
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
