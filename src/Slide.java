@@ -1,5 +1,4 @@
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
@@ -20,12 +19,12 @@ public class Slide {
 	protected Vector<SlideItem> items; //The SlideItems are kept in a vector
 
 	public Slide() {
-		items = new Vector<SlideItem>();
+		items = new Vector<>();
 	}
 
 	//Add a SlideItem
 	public void append(SlideItem anItem) {
-		items.addElement(anItem);
+		items.add(anItem);
 	}
 
 	//Return the title of a slide
@@ -43,11 +42,6 @@ public class Slide {
 		append(new TextItem(level, message));
 	}
 
-	//Returns the SlideItem
-	public SlideItem getSlideItem(int number) {
-		return (SlideItem)items.elementAt(number);
-	}
-
 	//Return all the SlideItems in a vector
 	public Vector<SlideItem> getSlideItems() {
 		return items;
@@ -63,13 +57,13 @@ public class Slide {
 		float scale = getScale(area);
 		int x = area.x;
 	    int y = area.y;
-	//The title is treated separately
+		//The title is treated separately
 	    SlideItem slideItem = new TextItem(0, getTitle());
 	    Style style = Style.getStyle(slideItem.getLevel());
 	    slideItem.draw(x, y, scale, g, style, view);
 	    y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    for (int number=0; number<getSize(); number++) {
-	      slideItem = (SlideItem)getSlideItems().elementAt(number);
+	      slideItem = getSlideItems().elementAt(number);
 	      slideItem.draw(x, y, scale, g, style, view);
 	      y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    }
@@ -77,6 +71,6 @@ public class Slide {
 
 	//Returns the scale to draw a slide
 	private float getScale(Rectangle area) {
-		return Math.min(((float)area.width) / ((float)WIDTH), ((float)area.height) / ((float)HEIGHT));
+		return Math.min(((float) area.width) / WIDTH, ((float) area.height) / HEIGHT);
 	}
 }
