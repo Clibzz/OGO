@@ -7,9 +7,10 @@ De veranderingen die ik heb gemaakt zijn als volgt:
 - Verwijderen van onnodige casts
 - Lambda in plaats van sommige actionlisteners in MenuController
 - Textblock about page ipv constant \n
-- Final fiels waar dit van toepassing is
+- Final fields waar dit van toepassing is
 - Toevoegen van this. in verschillende klasses
 - Toevoegen van serial annotation
 - Verwijderen van overbodige initialisatie van velden
 - For loops i.p.v. iterators, omdat dit netter is
+- Nullcheck fix in SlideViewerComponent
 - Toevoegen van StyleFactory
