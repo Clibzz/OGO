@@ -12,3 +12,4 @@ De veranderingen die ik heb gemaakt zijn als volgt:
 - Toevoegen van serial annotation
 - Verwijderen van overbodige initialisatie van velden
 - For loops i.p.v. iterators, omdat dit netter is
+- Toevoegen van StyleFactory

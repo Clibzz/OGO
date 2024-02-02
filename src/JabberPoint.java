@@ -24,7 +24,9 @@ public class JabberPoint {
 	/** The main program */
 	public static void main(String[] argv) {
 
-		Style.createStyles();
+		for (int i = 0; i < 5; i++) {
+			StyleFactory.createStyles(i);
+		}
 		Presentation presentation = new Presentation();
 		new SlideViewerFrame(JABVERSION, presentation);
 		try {
