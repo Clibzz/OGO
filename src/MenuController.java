@@ -23,10 +23,8 @@ public class MenuController extends MenuBar {
 	
 	private final Frame parent; //The frame, only used as parent for the Dialogs
 	private final Presentation presentation; //Commands are given to the presentation
-	
 	@Serial
 	private static final long serialVersionUID = 227L;
-	
 	protected static final String ABOUT = "About";
 	protected static final String FILE = "File";
 	protected static final String EXIT = "Exit";

@@ -29,12 +29,12 @@ public class Slide {
 
 	//Return the title of a slide
 	public String getTitle() {
-		return title;
+		return this.title;
 	}
 
 	//Change the title of a slide
 	public void setTitle(String newTitle) {
-		title = newTitle;
+		this.title = newTitle;
 	}
 
 	//Create a TextItem out of a String and add the TextItem
