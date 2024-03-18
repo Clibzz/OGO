@@ -1,11 +1,10 @@
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
-import java.io.Serial;
 import javax.swing.JFrame;
 
 /**
- * <p>The applicatiewindow for a slideviewcomponent</p>
+ * <p>Het applicatiewindow voor een slideviewcomponent</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -16,7 +15,6 @@ import javax.swing.JFrame;
 */
 
 public class SlideViewerFrame extends JFrame {
-	@Serial
 	private static final long serialVersionUID = 3227L;
 	
 	private static final String JABTITLE = "Jabberpoint 1.6 - OU";
@@ -30,7 +28,7 @@ public class SlideViewerFrame extends JFrame {
 		setupWindow(slideViewerComponent, presentation);
 	}
 
-    //Set up the GUI
+// De GUI opzetten
 	public void setupWindow(SlideViewerComponent 
 			slideViewerComponent, Presentation presentation) {
 		setTitle(JABTITLE);
@@ -40,9 +38,9 @@ public class SlideViewerFrame extends JFrame {
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation)); //Add a controller
-		setMenuBar(new MenuController(this, presentation));	//Add another controller
-		setSize(new Dimension(WIDTH, HEIGHT)); //Same sizes a slide has
+		addKeyListener(new KeyController(presentation)); // een controller toevoegen
+		setMenuBar(new MenuController(this, presentation));	// nog een controller toevoegen
+		setSize(new Dimension(WIDTH, HEIGHT)); // Dezelfde maten als Slide hanteert.
 		setVisible(true);
 	}
 }

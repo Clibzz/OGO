@@ -2,8 +2,8 @@ import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.image.ImageObserver;
 
-/** <p>The abstract class for items on a slide.<p>
- * <p>All SlideItems have drawing capabilities.</p>
+/** <p>De abstracte klasse voor een item op een Slide<p>
+ * <p>Alle SlideItems hebben tekenfunctionaliteit.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -14,22 +14,26 @@ import java.awt.image.ImageObserver;
 */
 
 public abstract class SlideItem {
-	private final int level; //The level of the SlideItem
+	private int level = 0; // het level van het slideitem
 
-	public SlideItem(int level) {
-		this.level = level;
+	public SlideItem(int lev) {
+		level = lev;
 	}
 
-	//Returns the level
+	public SlideItem() {
+		this(0);
+	}
+
+// Geef het level
 	public int getLevel() {
-		return this.level;
+		return level;
 	}
 
-	//Returns the bounding box
+// Geef de bounding box
 	public abstract Rectangle getBoundingBox(Graphics g, 
 			ImageObserver observer, float scale, Style style);
 
-	//Draws the item
+// teken het item
 	public abstract void draw(int x, int y, float scale, 
 			Graphics g, Style style, ImageObserver observer);
 }

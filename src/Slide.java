@@ -1,8 +1,9 @@
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
 import java.util.Vector;
 
-/** <p>A slide. This class has drawing functionality.</p>
+/** <p>Een slide. Deze klasse heeft tekenfunctionaliteit.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -15,62 +16,67 @@ import java.util.Vector;
 public class Slide {
 	public final static int WIDTH = 1200;
 	public final static int HEIGHT = 800;
-	protected String title; //The title is kept separately
-	protected Vector<SlideItem> items; //The SlideItems are kept in a vector
+	protected String title; // de titel wordt apart bewaard
+	protected Vector<SlideItem> items; // de slide-items worden in een Vector bewaard
 
 	public Slide() {
-		this.items = new Vector<>();
+		items = new Vector<SlideItem>();
 	}
 
-	//Add a SlideItem
+	// Voeg een SlideItem toe
 	public void append(SlideItem anItem) {
-		this.items.add(anItem);
+		items.addElement(anItem);
 	}
 
-	//Return the title of a slide
+	// geef de titel van de slide
 	public String getTitle() {
-		return this.title;
+		return title;
 	}
 
-	//Change the title of a slide
+	// verander de titel van de slide
 	public void setTitle(String newTitle) {
-		this.title = newTitle;
+		title = newTitle;
 	}
 
-	//Create a TextItem out of a String and add the TextItem
+	// Maak een TextItem van String, en voeg het TextItem toe
 	public void append(int level, String message) {
 		append(new TextItem(level, message));
 	}
 
-	//Return all the SlideItems in a vector
+	// geef het betreffende SlideItem
+	public SlideItem getSlideItem(int number) {
+		return (SlideItem)items.elementAt(number);
+	}
+
+	// geef alle SlideItems in een Vector
 	public Vector<SlideItem> getSlideItems() {
-		return this.items;
+		return items;
 	}
 
-	//Returns the size of a slide
+	// geef de afmeting van de Slide
 	public int getSize() {
-		return this.items.size();
+		return items.size();
 	}
 
-	//Draws the slide
+	// teken de slide
 	public void draw(Graphics g, Rectangle area, ImageObserver view) {
 		float scale = getScale(area);
-		int x = area.x;
 	    int y = area.y;
-		//The title is treated separately
+	// De titel wordt apart behandeld
 	    SlideItem slideItem = new TextItem(0, getTitle());
 	    Style style = Style.getStyle(slideItem.getLevel());
-	    slideItem.draw(x, y, scale, g, style, view);
+	    slideItem.draw(area.x, y, scale, g, style, view);
 	    y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    for (int number=0; number<getSize(); number++) {
-	      slideItem = getSlideItems().elementAt(number);
-	      slideItem.draw(x, y, scale, g, style, view);
+	      slideItem = (SlideItem)getSlideItems().elementAt(number);
+	      style = Style.getStyle(slideItem.getLevel());
+	      slideItem.draw(area.x, y, scale, g, style, view);
 	      y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    }
 	  }
 
-	//Returns the scale to draw a slide
+	// geef de schaal om de slide te kunnen tekenen
 	private float getScale(Rectangle area) {
-		return Math.min(((float) area.width) / WIDTH, ((float) area.height) / HEIGHT);
+		return Math.min(((float)area.width) / ((float)WIDTH), ((float)area.height) / ((float)HEIGHT));
 	}
 }

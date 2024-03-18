@@ -12,10 +12,10 @@ import java.awt.event.KeyAdapter;
 */
 
 public class KeyController extends KeyAdapter {
-	private final Presentation presentation; //Commands are given to the presentation
+	private Presentation presentation; // Er worden commando's gegeven aan de presentatie
 
 	public KeyController(Presentation p) {
-		this.presentation = p;
+		presentation = p;
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
@@ -34,7 +34,7 @@ public class KeyController extends KeyAdapter {
 			case 'q':
 			case 'Q':
 				System.exit(0);
-				break; //Should not be reached
+				break; // wordt nooit bereikt als het goed is
 			default:
 				break;
 		}

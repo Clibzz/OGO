@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 
 /**
- * <p>Presentations keeps track of the slides in a presentation.</p>
- * <p>Only one instance of this class is available.</p>
+ * <p>Presentation houdt de slides in de presentatie bij.</p>
+ * <p>Er is slechts één instantie van deze klasse aanwezig.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -14,10 +14,10 @@ import java.util.ArrayList;
  */
 
 public class Presentation {
-	private String showTitle; //The title of the presentation
-	private ArrayList<Slide> showList = null; //An ArrayList with slides
-	private int currentSlideNumber = 0; //The number of the current slide
-	private SlideViewerComponent slideViewComponent; //The view component of the slides
+	private String showTitle; // de titel van de presentatie
+	private ArrayList<Slide> showList = null; // een ArrayList met de Slides
+	private int currentSlideNumber = 0; // het slidenummer van de huidige Slide
+	private SlideViewerComponent slideViewComponent = null; // de viewcomponent voor de Slides
 
 	public Presentation() {
 		slideViewComponent = null;
@@ -45,55 +45,53 @@ public class Presentation {
 		this.slideViewComponent = slideViewerComponent;
 	}
 
-	//Returns the number of the current slide
+	// geef het nummer van de huidige slide
 	public int getSlideNumber() {
 		return currentSlideNumber;
 	}
 
-	//Change the current slide number and report it the window
+	// verander het huidige-slide-nummer en laat het aan het window weten.
 	public void setSlideNumber(int number) {
-		if (number <= (showList.size() - 1) && number >= 0) {
-			this.currentSlideNumber = number;
-			if (slideViewComponent != null) {
-				slideViewComponent.update(this, getCurrentSlide());
-			}
+		currentSlideNumber = number;
+		if (slideViewComponent != null) {
+			slideViewComponent.update(this, getCurrentSlide());
 		}
 	}
 
-	//Navigate to the previous slide unless we are at the first slide
+	// ga naar de vorige slide tenzij je aan het begin van de presentatie bent
 	public void prevSlide() {
 		if (currentSlideNumber > 0) {
 			setSlideNumber(currentSlideNumber - 1);
-		}
+	    }
 	}
 
-	//Navigate to the next slide unless we are at the last slide
+	// Ga naar de volgende slide tenzij je aan het einde van de presentatie bent.
 	public void nextSlide() {
 		if (currentSlideNumber < (showList.size()-1)) {
 			setSlideNumber(currentSlideNumber + 1);
 		}
 	}
 
-	//Remove the presentation
+	// Verwijder de presentatie, om klaar te zijn voor de volgende
 	void clear() {
 		showList = new ArrayList<Slide>();
 		setSlideNumber(-1);
 	}
 
-	//Add a slide to the presentation
+	// Voeg een slide toe aan de presentatie
 	public void append(Slide slide) {
 		showList.add(slide);
 	}
 
-	//Return a slide with a specific number
+	// Geef een slide met een bepaald slidenummer
 	public Slide getSlide(int number) {
 		if (number < 0 || number >= getSize()){
 			return null;
-		}
-		return showList.get(number);
+	    }
+			return (Slide)showList.get(number);
 	}
 
-	//Return the current slide
+	// Geef de huidige Slide
 	public Slide getCurrentSlide() {
 		return getSlide(currentSlideNumber);
 	}

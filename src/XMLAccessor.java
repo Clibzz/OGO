@@ -30,7 +30,7 @@ public class XMLAccessor extends Accessor {
     /** Default API to use. */
     protected static final String DEFAULT_API_TO_USE = "dom";
     
-    /** Names of xml tags of attributes */
+    /** namen van xml tags of attributen */
     protected static final String SHOWTITLE = "showtitle";
     protected static final String SLIDETITLE = "title";
     protected static final String SLIDE = "slide";
@@ -40,7 +40,7 @@ public class XMLAccessor extends Accessor {
     protected static final String TEXT = "text";
     protected static final String IMAGE = "image";
     
-    /** Text of messages */
+    /** tekst van messages */
     protected static final String PCE = "Parser Configuration Exception";
     protected static final String UNKNOWNTYPE = "Unknown Element type";
     protected static final String NFE = "Number Format Exception";
@@ -53,10 +53,10 @@ public class XMLAccessor extends Accessor {
     }
 
 	public void loadFile(Presentation presentation, String filename) throws IOException {
-		int slideNumber, itemNumber, max, maxItems;
+		int slideNumber, itemNumber, max = 0, maxItems = 0;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
-			Document document = builder.parse(new File(filename)); //Create a JDOM document
+			Document document = builder.parse(new File(filename)); // maak een JDOM document
 			Element doc = document.getDocumentElement();
 			presentation.setTitle(getTitle(doc, SHOWTITLE));
 
@@ -90,10 +90,10 @@ public class XMLAccessor extends Accessor {
 	protected void loadSlideItem(Slide slide, Element item) {
 		int level = 1; // default
 		NamedNodeMap attributes = item.getAttributes();
-		String levelText = attributes.getNamedItem(LEVEL).getTextContent();
-		if (levelText != null) {
+		String leveltext = attributes.getNamedItem(LEVEL).getTextContent();
+		if (leveltext != null) {
 			try {
-				level = Integer.parseInt(levelText);
+				level = Integer.parseInt(leveltext);
 			}
 			catch(NumberFormatException x) {
 				System.err.println(NFE);
