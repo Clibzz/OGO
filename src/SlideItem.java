@@ -20,10 +20,6 @@ public abstract class SlideItem {
 		this.level = lev;
 	}
 
-	public SlideItem() {
-		this(0);
-	}
-
 // Geef het level
 	public int getLevel() {
 		return this.level;

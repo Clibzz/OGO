@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 /**
  * <p>Presentation houdt de slides in de presentatie bij.</p>
  * <p>Er is slechts ��n instantie van deze klasse aanwezig.</p>

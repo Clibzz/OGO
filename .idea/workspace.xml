@@ -6,33 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="75154684-03a1-49b1-bd73-642fce97b56e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/AboutBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/AboutBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/BitmapItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/DemoPresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/DemoPresentation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Presentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Presentation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Slide.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/TextItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/XMLAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/XMLAccessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JabberPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLAccessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,25 +32,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JabberPoint.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "freshJabberPoint",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/chris/Desktop/Repositories/OGO",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JabberPoint.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;freshJabberPoint&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/chris/Desktop/Repositories/OGO&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JabberPoint" />
@@ -115,7 +94,8 @@
       <option name="presentableId" value="Default" />
       <updated>1710750221080</updated>
       <workItem from="1710750222122" duration="218000" />
-      <workItem from="1710750444143" duration="2700000" />
+      <workItem from="1710750444143" duration="2940000" />
+      <workItem from="1710767748043" duration="1044000" />
     </task>
     <servers />
   </component>
