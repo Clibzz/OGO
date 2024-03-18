@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 /**
  * <p>Presentation houdt de slides in de presentatie bij.</p>
- * <p>Er is slechts één instantie van deze klasse aanwezig.</p>
+ * <p>Er is slechts ï¿½ï¿½n instantie van deze klasse aanwezig.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -17,7 +17,7 @@ public class Presentation {
 	private String showTitle; // de titel van de presentatie
 	private ArrayList<Slide> showList = null; // een ArrayList met de Slides
 	private int currentSlideNumber = 0; // het slidenummer van de huidige Slide
-	private SlideViewerComponent slideViewComponent = null; // de viewcomponent voor de Slides
+	private SlideViewerComponent slideViewComponent; // de viewcomponent voor de Slides
 
 	public Presentation() {
 		slideViewComponent = null;
@@ -45,16 +45,16 @@ public class Presentation {
 		this.slideViewComponent = slideViewerComponent;
 	}
 
-	// geef het nummer van de huidige slide
 	public int getSlideNumber() {
 		return currentSlideNumber;
 	}
 
-	// verander het huidige-slide-nummer en laat het aan het window weten.
 	public void setSlideNumber(int number) {
-		currentSlideNumber = number;
-		if (slideViewComponent != null) {
-			slideViewComponent.update(this, getCurrentSlide());
+		if (number <= (showList.size() - 1) && number >= 0) {
+			this.currentSlideNumber = number;
+			if (slideViewComponent != null) {
+				slideViewComponent.update(this, getCurrentSlide());
+			}
 		}
 	}
 
@@ -88,7 +88,7 @@ public class Presentation {
 		if (number < 0 || number >= getSize()){
 			return null;
 	    }
-			return (Slide)showList.get(number);
+			return showList.get(number);
 	}
 
 	// Geef de huidige Slide

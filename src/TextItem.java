@@ -26,18 +26,11 @@ import java.util.ArrayList;
 
 public class TextItem extends SlideItem {
 	private String text;
-	
-	private static final String EMPTYTEXT = "No Text Given";
 
 // een textitem van level level, met als tekst string
 	public TextItem(int level, String string) {
 		super(level);
 		text = string;
-	}
-
-// een leeg textitem
-	public TextItem() {
-		this(0, EMPTYTEXT);
 	}
 
 // Geef de tekst
