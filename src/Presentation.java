@@ -74,7 +74,7 @@ public class Presentation {
 
 	// Verwijder de presentatie, om klaar te zijn voor de volgende
 	void clear() {
-		showList = new ArrayList<Slide>();
+		showList = new ArrayList<>();
 		setSlideNumber(-1);
 	}
 

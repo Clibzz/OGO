@@ -20,9 +20,9 @@ import javax.swing.JFrame;
 public class SlideViewerComponent extends JComponent {
 		
 	private Slide slide; // de huidige slide
-	private Font labelFont = null; // het font voor labels
-	private Presentation presentation = null; // de presentatie
-	private JFrame frame = null;
+	private Font labelFont; // het font voor labels
+	private Presentation presentation; // de presentatie
+	private JFrame frame;
 	
 	private static final long serialVersionUID = 227L;
 	

@@ -5,11 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75154684-03a1-49b1-bd73-642fce97b56e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Accessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Accessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/AboutBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/AboutBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/BitmapItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/BitmapItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/DemoPresentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/DemoPresentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Presentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Presentation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Slide.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/Slide.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/TextItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/TextItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/XMLAccessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Jabberpoint_Sourcecode_Students/XMLAccessor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BitmapItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KeyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KeyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLAccessor.java" afterDir="false" />
     </list>
@@ -34,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.JabberPoint.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "freshJabberPoint",
@@ -51,6 +73,13 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="JabberPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JabberPoint" />
+      <module name="Jabberpoint_Sourcecode_Students" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="OGO" />
       <method v="2">
@@ -64,6 +93,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JabberPoint" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -81,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710750221080</updated>
       <workItem from="1710750222122" duration="218000" />
-      <workItem from="1710750444143" duration="592000" />
+      <workItem from="1710750444143" duration="2700000" />
     </task>
     <servers />
   </component>

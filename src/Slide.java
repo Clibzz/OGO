@@ -43,11 +43,6 @@ public class Slide {
 		append(new TextItem(level, message));
 	}
 
-	// geef het betreffende SlideItem
-	public SlideItem getSlideItem(int number) {
-		return (SlideItem)items.elementAt(number);
-	}
-
 	// geef alle SlideItems in een Vector
 	public Vector<SlideItem> getSlideItems() {
 		return items;
@@ -68,7 +63,7 @@ public class Slide {
 	    slideItem.draw(area.x, y, scale, g, style, view);
 	    y += slideItem.getBoundingBox(g, view, scale, style).height;
 	    for (int number=0; number<getSize(); number++) {
-	      slideItem = (SlideItem)getSlideItems().elementAt(number);
+	      slideItem = getSlideItems().elementAt(number);
 	      style = Style.getStyle(slideItem.getLevel());
 	      slideItem.draw(area.x, y, scale, g, style, view);
 	      y += slideItem.getBoundingBox(g, view, scale, style).height;

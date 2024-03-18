@@ -14,10 +14,10 @@ import java.awt.image.ImageObserver;
 */
 
 public abstract class SlideItem {
-	private int level = 0; // het level van het slideitem
+	private int level; // het level van het slideitem
 
 	public SlideItem(int lev) {
-		level = lev;
+		this.level = lev;
 	}
 
 	public SlideItem() {
@@ -26,7 +26,7 @@ public abstract class SlideItem {
 
 // Geef het level
 	public int getLevel() {
-		return level;
+		return this.level;
 	}
 
 // Geef de bounding box

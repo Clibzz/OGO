@@ -12,7 +12,7 @@ import java.awt.event.KeyAdapter;
 */
 
 public class KeyController extends KeyAdapter {
-	private Presentation presentation; // Er worden commando's gegeven aan de presentatie
+	private final Presentation presentation; // Er worden commando's gegeven aan de presentatie
 
 	public KeyController(Presentation p) {
 		presentation = p;
