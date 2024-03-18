@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="75154684-03a1-49b1-bd73-642fce97b56e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JabberPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JabberPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SlideItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SlideViewerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SlideViewerComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XMLAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLAccessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <updated>1710750221080</updated>
       <workItem from="1710750222122" duration="218000" />
       <workItem from="1710750444143" duration="2940000" />
-      <workItem from="1710767748043" duration="1044000" />
+      <workItem from="1710767748043" duration="2084000" />
     </task>
     <servers />
   </component>

@@ -114,34 +114,28 @@ public class XMLAccessor extends Accessor {
 		out.println("<?xml version=\"1.0\"?>");
 		out.println("<!DOCTYPE presentation SYSTEM \"jabberpoint.dtd\">");
 		out.println("<presentation>");
-		out.print("<showtitle>");
-		out.print(presentation.getTitle());
-		out.println("</showtitle>");
-		for (int slideNumber=0; slideNumber<presentation.getSize(); slideNumber++) {
-			Slide slide = presentation.getSlide(slideNumber);
+		out.print("<showtitle>" + presentation.getTitle() + "</showtitle>");
+		for (Slide slide : presentation.getSlides()) {
 			out.println("<slide>");
 			out.println("<title>" + slide.getTitle() + "</title>");
-			Vector<SlideItem> slideItems = slide.getSlideItems();
-			for (int itemNumber = 0; itemNumber<slideItems.size(); itemNumber++) {
-				SlideItem slideItem = (SlideItem) slideItems.elementAt(itemNumber);
-				out.print("<item kind="); 
+
+			for (SlideItem slideItem : slide.getSlideItems()) {
 				if (slideItem instanceof TextItem) {
-					out.print("\"text\" level=\"" + slideItem.getLevel() + "\">");
-					out.print( ( (TextItem) slideItem).getText());
+					out.println("<item kind=\"text\" level=\"" + slideItem.getLevel() + "\">");
+					out.println(((TextItem) slideItem).getText());
+					out.println("</item>");
+				} else if (slideItem instanceof BitmapItem) {
+					out.println("<item kind=\"image\" level=\"" + slideItem.getLevel() + "\">");
+					out.println(((BitmapItem) slideItem).getName());
+					out.println("</item>");
+				} else {
+					System.out.println("Ignoring " + slideItem);
 				}
-				else {
-					if (slideItem instanceof BitmapItem) {
-						out.print("\"image\" level=\"" + slideItem.getLevel() + "\">");
-						out.print( ( (BitmapItem) slideItem).getName());
-					}
-					else {
-						System.out.println("Ignoring " + slideItem);
-					}
-				}
-				out.println("</item>");
 			}
+
 			out.println("</slide>");
 		}
+
 		out.println("</presentation>");
 		out.close();
 	}

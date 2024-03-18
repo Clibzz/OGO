@@ -90,6 +90,10 @@ public class Presentation {
 			return showList.get(number);
 	}
 
+	public ArrayList<Slide> getSlides() {
+		return this.showList;
+	}
+
 	// Geef de huidige Slide
 	public Slide getCurrentSlide() {
 		return getSlide(currentSlideNumber);

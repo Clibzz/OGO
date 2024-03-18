@@ -14,7 +14,7 @@ import java.awt.image.ImageObserver;
 */
 
 public abstract class SlideItem {
-	private int level; // het level van het slideitem
+	private final int level; // het level van het slideitem
 
 	public SlideItem(int lev) {
 		this.level = lev;
