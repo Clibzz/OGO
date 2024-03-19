@@ -12,29 +12,27 @@ import java.awt.event.KeyAdapter;
 */
 
 public class KeyController extends KeyAdapter {
-	private final Presentation presentation; // Er worden commando's gegeven aan de presentatie
+	private final Presentation presentation;
 
 	public KeyController(Presentation p) {
 		this.presentation = p;
 	}
 
+	/**
+	 * Check which key is pressed, call method accordingly
+	 * @param keyEvent the event to be processed
+	 */
 	public void keyPressed(KeyEvent keyEvent) {
 		switch(keyEvent.getKeyCode()) {
-			case KeyEvent.VK_PAGE_DOWN:
-			case KeyEvent.VK_DOWN:
-			case KeyEvent.VK_ENTER:
-			case '+':
+			case KeyEvent.VK_PAGE_DOWN, KeyEvent.VK_DOWN, KeyEvent.VK_ENTER, '+':
 				this.presentation.nextSlide();
 				break;
-			case KeyEvent.VK_PAGE_UP:
-			case KeyEvent.VK_UP:
-			case '-':
+			case KeyEvent.VK_PAGE_UP, KeyEvent.VK_UP, '-':
 				this.presentation.prevSlide();
 				break;
-			case 'q':
-			case 'Q':
+			case 'q', 'Q':
 				System.exit(0);
-				break; // wordt nooit bereikt als het goed is
+				break; // Should not get reached
 			default:
 				break;
 		}
