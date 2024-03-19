@@ -49,7 +49,7 @@ public class XMLAccessor extends Accessor {
     }
 
 	public void loadFile(Presentation presentation, String filename) throws IOException {
-		int slideNumber, itemNumber, max = 0, maxItems = 0;
+		int slideNumber, itemNumber, max, maxItems;
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename)); // maak een JDOM document
@@ -118,7 +118,7 @@ public class XMLAccessor extends Accessor {
 		for (Slide slide : presentation.getSlides()) {
 			out.println("<slide>");
 			out.println("<title>" + slide.getTitle() + "</title>");
-
+			
 			for (SlideItem slideItem : slide.getSlideItems()) {
 				if (slideItem instanceof TextItem) {
 					out.println("<item kind=\"text\" level=\"" + slideItem.getLevel() + "\">");

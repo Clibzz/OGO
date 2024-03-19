@@ -98,6 +98,6 @@ public class MenuController extends MenuBar {
 
 // een menu-item aanmaken
 	public MenuItem mkMenuItem(String name) {
-		return new MenuItem(name, new MenuShortcut(name.charAt(0)));
+		return new MenuItem(name, name.equals("Next") ? new MenuShortcut(name.charAt(0), true) : new MenuShortcut(name.charAt(0)));
 	}
 }

@@ -19,7 +19,7 @@ public class Presentation {
 	private SlideViewerComponent slideViewComponent; // de viewcomponent voor de Slides
 
 	public Presentation() {
-		slideViewComponent = null;
+		this.slideViewComponent = null;
 		clear();
 	}
 
@@ -29,15 +29,15 @@ public class Presentation {
 	}
 
 	public int getSize() {
-		return showList.size();
+		return this.showList.size();
 	}
 
 	public String getTitle() {
-		return showTitle;
+		return this.showTitle;
 	}
 
 	public void setTitle(String nt) {
-		showTitle = nt;
+		this.showTitle = nt;
 	}
 
 	public void setShowView(SlideViewerComponent slideViewerComponent) {
@@ -45,41 +45,41 @@ public class Presentation {
 	}
 
 	public int getSlideNumber() {
-		return currentSlideNumber;
+		return this.currentSlideNumber;
 	}
 
 	public void setSlideNumber(int number) {
-		if (number <= (showList.size() - 1) && number >= 0) {
+		if (number <= (this.showList.size() - 1) && number >= 0) {
 			this.currentSlideNumber = number;
-			if (slideViewComponent != null) {
-				slideViewComponent.update(this, getCurrentSlide());
+			if (this.slideViewComponent != null) {
+				this.slideViewComponent.update(this, getSlide(this.currentSlideNumber));
 			}
 		}
 	}
 
 	// ga naar de vorige slide tenzij je aan het begin van de presentatie bent
 	public void prevSlide() {
-		if (currentSlideNumber > 0) {
-			setSlideNumber(currentSlideNumber - 1);
+		if (this.currentSlideNumber > 0) {
+			setSlideNumber(this.currentSlideNumber - 1);
 	    }
 	}
 
 	// Ga naar de volgende slide tenzij je aan het einde van de presentatie bent.
 	public void nextSlide() {
-		if (currentSlideNumber < (showList.size()-1)) {
-			setSlideNumber(currentSlideNumber + 1);
+		if (this.currentSlideNumber < this.showList.size()) {
+			setSlideNumber(this.currentSlideNumber + 1);
 		}
 	}
 
 	// Verwijder de presentatie, om klaar te zijn voor de volgende
-	void clear() {
-		showList = new ArrayList<>();
+	public void clear() {
+		this.showList = new ArrayList<>();
 		setSlideNumber(-1);
 	}
 
 	// Voeg een slide toe aan de presentatie
 	public void append(Slide slide) {
-		showList.add(slide);
+		this.showList.add(slide);
 	}
 
 	// Geef een slide met een bepaald slidenummer
@@ -87,16 +87,12 @@ public class Presentation {
 		if (number < 0 || number >= getSize()){
 			return null;
 	    }
-			return showList.get(number);
+
+		return this.showList.get(number);
 	}
 
 	public ArrayList<Slide> getSlides() {
 		return this.showList;
-	}
-
-	// Geef de huidige Slide
-	public Slide getCurrentSlide() {
-		return getSlide(currentSlideNumber);
 	}
 
 	public void exit(int n) {

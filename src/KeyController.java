@@ -15,7 +15,7 @@ public class KeyController extends KeyAdapter {
 	private final Presentation presentation; // Er worden commando's gegeven aan de presentatie
 
 	public KeyController(Presentation p) {
-		presentation = p;
+		this.presentation = p;
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
@@ -24,12 +24,12 @@ public class KeyController extends KeyAdapter {
 			case KeyEvent.VK_DOWN:
 			case KeyEvent.VK_ENTER:
 			case '+':
-				presentation.nextSlide();
+				this.presentation.nextSlide();
 				break;
 			case KeyEvent.VK_PAGE_UP:
 			case KeyEvent.VK_UP:
 			case '-':
-				presentation.prevSlide();
+				this.presentation.prevSlide();
 				break;
 			case 'q':
 			case 'Q':
