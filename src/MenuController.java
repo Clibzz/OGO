@@ -12,28 +12,9 @@ import java.io.IOException;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 public class MenuController extends MenuBar {
-	
+
 	private final Frame parent; // het frame, alleen gebruikt als ouder voor de Dialogs
 	private final Presentation presentation; // Er worden commando's gegeven aan de presentatie
-	protected static final String ABOUT = "About";
-	protected static final String FILE = "File";
-	protected static final String EXIT = "Exit";
-	protected static final String GOTO = "Go to";
-	protected static final String HELP = "Help";
-	protected static final String NEW = "New";
-	protected static final String NEXT = "Next";
-	protected static final String OPEN = "Open";
-	protected static final String PAGENR = "Page number?";
-	protected static final String PREV = "Prev";
-	protected static final String SAVE = "Save";
-	protected static final String VIEW = "View";
-
-	protected static final String TESTFILE = "test.xml";
-	protected static final String SAVEFILE = "dump.xml";
-
-	protected static final String IOEX = "IO Exception: ";
-	protected static final String LOADERR = "Load Error";
-	protected static final String SAVEERR = "Save Error";
 
 	public MenuController(Frame frame, Presentation pres) {
 		this.parent = frame;
@@ -51,10 +32,10 @@ public class MenuController extends MenuBar {
 	private void saveFile() {
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
-			xmlAccessor.saveFile(presentation, SAVEFILE);
+			xmlAccessor.saveFile(presentation, MenuLabels.SAVEFILE);
 		} catch (IOException exc) {
-			JOptionPane.showMessageDialog(parent, IOEX + exc,
-					SAVEERR, JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(parent, MenuLabels.IOEX + exc,
+					MenuLabels.SAVEERR, JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -62,11 +43,11 @@ public class MenuController extends MenuBar {
 		presentation.clear();
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
-			xmlAccessor.loadFile(presentation, TESTFILE);
+			xmlAccessor.loadFile(presentation, MenuLabels.TESTFILE);
 			presentation.setSlideNumber(0);
 			parent.repaint();
 		} catch (IOException ex) {
-			JOptionPane.showMessageDialog(parent, IOEX + ex, LOADERR, JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(parent, MenuLabels.IOEX + ex, MenuLabels.LOADERR, JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -76,30 +57,30 @@ public class MenuController extends MenuBar {
 	}
 
 	private void buildFileMenu() {
-		Menu fileMenu = new Menu(FILE);
-		fileMenu.add(createMenuItem(mkMenuItem(OPEN), this::openPresentation));
-		fileMenu.add(createMenuItem(mkMenuItem(NEW), this::newPresentation));
-		fileMenu.add(createMenuItem(mkMenuItem(SAVE), this::saveFile));
-		fileMenu.add(createMenuItem(mkMenuItem(EXIT), () -> presentation.exit(0)));
+		Menu fileMenu = new Menu(MenuLabels.FILE);
+		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.OPEN), this::openPresentation));
+		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.NEW), this::newPresentation));
+		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.SAVE), this::saveFile));
+		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.EXIT), () -> presentation.exit(0)));
 		add(fileMenu);
 	}
 
 	private int getSlideNumberFromInput() {
-		String slideNumber = JOptionPane.showInputDialog(PAGENR);
+		String slideNumber = JOptionPane.showInputDialog(MenuLabels.PAGENR);
 		return Integer.parseInt(slideNumber);
 	}
 
 	private void buildViewMenu() {
-		Menu viewMenu = new Menu(VIEW);
-		viewMenu.add(createMenuItem(mkMenuItem(NEXT), presentation::nextSlide));
-		viewMenu.add(createMenuItem(mkMenuItem(PREV), presentation::prevSlide));
-		viewMenu.add(createMenuItem(mkMenuItem(GOTO), () -> presentation.setSlideNumber(getSlideNumberFromInput() - 1)));
+		Menu viewMenu = new Menu(MenuLabels.VIEW);
+		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.NEXT), presentation::nextSlide));
+		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.PREV), presentation::prevSlide));
+		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.GOTO), () -> presentation.setSlideNumber(getSlideNumberFromInput() - 1)));
 		add(viewMenu);
 	}
 
 	private void buildHelpMenu() {
-		Menu helpMenu = new Menu(HELP);
-		helpMenu.add(createMenuItem(mkMenuItem(ABOUT), () -> AboutBox.show(parent)));
+		Menu helpMenu = new Menu(MenuLabels.HELP);
+		helpMenu.add(createMenuItem(mkMenuItem(MenuLabels.ABOUT), () -> AboutBox.show(parent)));
 		setHelpMenu(helpMenu);
 	}
 
