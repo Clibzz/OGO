@@ -1,11 +1,8 @@
-import java.awt.Rectangle;
-import java.awt.Graphics;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
-
-import javax.imageio.ImageIO;
-
 import java.io.IOException;
 
 
@@ -27,7 +24,6 @@ public class BitmapItem extends SlideItem {
   protected static final String FILE = "Bestand ";
   protected static final String NOTFOUND = " niet gevonden";
 
-// level staat voor het item-level; name voor de naam van het bestand met de afbeelding
 	public BitmapItem(int level, String name) {
 		super(level);
 		this.imageName = name;
@@ -39,12 +35,18 @@ public class BitmapItem extends SlideItem {
 		}
 	}
 
-	// geef de bestandsnaam van de afbeelding
 	public String getName() {
 		return this.imageName;
 	}
 
-// geef de bounding box van de afbeelding
+	/**
+	 * Get the bounding box of an image
+	 * @param g The graphics context
+	 * @param observer The image observer that tracks changes
+	 * @param scale The scaling factor that's applied to the object
+	 * @param myStyle The style that is applied to the object
+	 * @return A rectangle which represents the bounding box
+	 */
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, float scale, Style myStyle) {
 		return new Rectangle((int) (myStyle.getIndent() * scale), 0,
 				(int) (this.bufferedImage.getWidth(observer) * scale),
@@ -52,7 +54,15 @@ public class BitmapItem extends SlideItem {
 				(int) (this.bufferedImage.getHeight(observer) * scale));
 	}
 
-// teken de afbeelding
+	/**
+	 * Draw the image
+	 * @param x The x-coordinate
+	 * @param y The y-coordinate
+	 * @param scale The scaling factor that's applied to the object
+	 * @param g The graphics context
+	 * @param myStyle The style that is applied to the object
+	 * @param observer The image observer that tracks changes
+	 */
 	public void draw(int x, int y, float scale, Graphics g, Style myStyle, ImageObserver observer) {
 		int width = x + (int) (myStyle.getIndent() * scale);
 		int height = y + (int) (myStyle.getLeading() * scale);
