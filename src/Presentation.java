@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * <p>Presentation houdt de slides in de presentatie bij.</p>
- * <p>Er is slechts ��n instantie van deze klasse aanwezig.</p>
+ * <p>Er is slechts een instantie van deze klasse aanwezig.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 
 public class Presentation {
-	private String showTitle; // de titel van de presentatie
-	private ArrayList<Slide> showList = null; // een ArrayList met de Slides
-	private int currentSlideNumber = 0; // het slidenummer van de huidige Slide
-	private SlideViewerComponent slideViewComponent; // de viewcomponent voor de Slides
+	private String showTitle;
+	private ArrayList<Slide> showList;
+	private int currentSlideNumber = 0;
+	private SlideViewerComponent slideViewComponent;
 
 	public Presentation() {
 		this.slideViewComponent = null;
@@ -44,10 +44,18 @@ public class Presentation {
 		this.slideViewComponent = slideViewerComponent;
 	}
 
+	/**
+	 * Get the current slide number
+	 * @return The current slide number
+	 */
 	public int getSlideNumber() {
 		return this.currentSlideNumber;
 	}
 
+	/**
+	 * Set the current slide number
+	 * @param number The number of the slide that has to be set
+	 */
 	public void setSlideNumber(int number) {
 		if (number <= (this.showList.size() - 1) && number >= 0) {
 			this.currentSlideNumber = number;
@@ -57,32 +65,45 @@ public class Presentation {
 		}
 	}
 
-	// ga naar de vorige slide tenzij je aan het begin van de presentatie bent
+	/**
+	 * Navigate to the previous slide
+	 */
 	public void prevSlide() {
 		if (this.currentSlideNumber > 0) {
 			setSlideNumber(this.currentSlideNumber - 1);
 	    }
 	}
 
-	// Ga naar de volgende slide tenzij je aan het einde van de presentatie bent.
+	/**
+	 * Navigate to the next slide
+	 */
 	public void nextSlide() {
 		if (this.currentSlideNumber < this.showList.size()) {
 			setSlideNumber(this.currentSlideNumber + 1);
 		}
 	}
 
-	// Verwijder de presentatie, om klaar te zijn voor de volgende
+	/**
+	 * Delete the presentation
+	 */
 	public void clear() {
 		this.showList = new ArrayList<>();
 		setSlideNumber(-1);
 	}
 
-	// Voeg een slide toe aan de presentatie
+	/**
+	 * Add a slide to the presentation
+	 * @param slide A slide
+	 */
 	public void append(Slide slide) {
 		this.showList.add(slide);
 	}
 
-	// Geef een slide met een bepaald slidenummer
+	/**
+	 * Get a slide with a specific number
+	 * @param number The slide number
+	 * @return The slide with the given number
+	 */
 	public Slide getSlide(int number) {
 		if (number < 0 || number >= getSize()){
 			return null;
@@ -91,10 +112,18 @@ public class Presentation {
 		return this.showList.get(number);
 	}
 
+	/**
+	 * Get all the slides of a presentation
+	 * @return A list with all the slides of  presentation
+	 */
 	public ArrayList<Slide> getSlides() {
 		return this.showList;
 	}
 
+	/**
+	 * Close the application
+	 * @param n The exit code
+	 */
 	public void exit(int n) {
 		System.exit(n);
 	}
