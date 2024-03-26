@@ -50,7 +50,7 @@ public class JabberPoint {
 	 * Close the application
 	 * @param n The exit code
 	 */
-	public void exit(int n) {
+	public static void exit(int n) {
 		System.exit(n);
 	}
 }

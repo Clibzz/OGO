@@ -1,5 +1,6 @@
 package Util;
 
+import JabberPoint.JabberPoint;
 import Presentation.Presentation;
 
 import java.awt.event.KeyEvent;
@@ -35,7 +36,7 @@ public class KeyController extends KeyAdapter {
 				this.presentation.prevSlide();
 				break;
 			case 'q', 'Q':
-				System.exit(0);
+				JabberPoint.exit(0);
 				break; // Should not get reached
 			default:
 				break;

@@ -1,5 +1,6 @@
 package Slide;
 
+import JabberPoint.JabberPoint;
 import Menu.*;
 import Presentation.*;
 import Util.*;
@@ -44,13 +45,13 @@ public class SlideViewerFrame extends JFrame {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent e) {
-					System.exit(0);
+					JabberPoint.exit(0);
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation)); // een controller toevoegen
-		setMenuBar(new MenuController(this, presentation));	// nog een controller toevoegen
-		setSize(new Dimension(WIDTH, HEIGHT)); // Dezelfde maten als Slide hanteert.
+		addKeyListener(new KeyController(presentation));
+		setMenuBar(new MenuController(this, presentation));
+		setSize(new Dimension(WIDTH, HEIGHT));
 		setVisible(true);
 	}
 }

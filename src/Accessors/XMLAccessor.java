@@ -3,7 +3,6 @@ package Accessors;
 import Presentation.Presentation;
 import Slide.*;
 import Items.*;
-import Slide.Slide;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
