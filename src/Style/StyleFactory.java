@@ -6,10 +6,22 @@ public class StyleFactory
 {
     private static Style[] styles;
 
+    /**
+     * Create a single Style object
+     * @param indent The indent
+     * @param color The coclor
+     * @param points The points
+     * @param leading The leading
+     * @return The newly made Style object
+     */
     public static Style createStyle(int indent, Color color, int points, int leading)
     {
         return new Style(indent, color, points, leading);
     }
+
+    /**
+     * Create the different available styles
+     */
     public static void createStyles() {
         styles = new Style[5];
         styles[0] = createStyle(0, Color.red,   48, 20);
@@ -19,6 +31,11 @@ public class StyleFactory
         styles[4] = createStyle(90, Color.black, 24, 10);
     }
 
+    /**
+     * Get the styling of a specified level in a slide
+     * @param level The specified level
+     * @return The style that of the specified level
+     */
     public static Style getStyle(int level) {
         if (level >= styles.length) {
             level = styles.length - 1;

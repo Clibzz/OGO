@@ -41,12 +41,26 @@ public class TextItem extends SlideItem
 		return this.text == null ? "" : this.text;
 	}
 
+	/**
+	 * Creates an AttributedString object with the specified style and scale.
+	 * @param style The style of the text.
+	 * @param scale The scaling factor.
+	 * @return An AttributedString object representing the text with the given style and scale.
+	 */
 	public AttributedString getAttributedString(Style style, float scale) {
 		AttributedString attrStr = new AttributedString(getText());
 		attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0, this.text.length());
 		return attrStr;
 	}
 
+	/**
+	 * Calculates the bounding box of the text based on its layout, style, and scale
+	 * @param g The graphics context used for rendering
+	 * @param observer The image observer
+	 * @param scale The scaling factor
+	 * @param myStyle The style
+	 * @return The bounding box rectangle
+	 */
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, 
 			float scale, Style myStyle) {
 		List<TextLayout> layouts = getLayouts(g, myStyle, scale);
@@ -64,6 +78,15 @@ public class TextItem extends SlideItem
 		return new Rectangle((int) (myStyle.getIndent() * scale), 0, xsize, ysize );
 	}
 
+	/**
+	 * Draws the text at the specified location with the given style and scale
+	 * @param x The x-coordinate
+	 * @param y The y-coordinate
+	 * @param scale The scaling factor
+	 * @param g The graphics context
+	 * @param myStyle The style of the text
+	 * @param o The image observer
+	 */
 	public void draw(int x, int y, float scale, Graphics g, 
 			Style myStyle, ImageObserver o) {
 		if (this.text == null || this.text.isEmpty()) {
@@ -79,8 +102,15 @@ public class TextItem extends SlideItem
             layout.draw(g2d, pen.x, pen.y);
             pen.y += layout.getDescent();
         }
-	  }
+	}
 
+	/**
+	 * Generates and returns a list of text layouts based on the provided graphics context, style and scale
+	 * @param g The graphics context
+	 * @param s The style
+	 * @param scale The scaling factor
+	 * @return A list of text layouts
+	 */
 	private List<TextLayout> getLayouts(Graphics g, Style s, float scale) {
 		List<TextLayout> layouts = new ArrayList<>();
 		AttributedString attrStr = getAttributedString(s, scale);

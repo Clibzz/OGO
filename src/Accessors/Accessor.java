@@ -26,8 +26,20 @@ public abstract class Accessor {
 	public Accessor() {
 	}
 
+	/**
+	 * Load a presentation file
+	 * @param p The presentation
+	 * @param fn The file name
+	 * @throws IOException Throws when a file can not be loaded
+	 */
 	abstract public void loadFile(Presentation p, String fn) throws IOException;
 
+	/**
+	 * Save a presentation file
+	 * @param p The presentation
+	 * @param fn The file name
+	 * @throws IOException Throws when a file can not be saved
+	 */
 	abstract public void saveFile(Presentation p, String fn) throws IOException;
 
 }

@@ -34,9 +34,14 @@ public class XMLAccessor extends Accessor
     private String getTitle(Element element, String tagName) {
     	NodeList titles = element.getElementsByTagName(tagName);
     	return titles.item(0).getTextContent();
-    	
     }
 
+	/**
+	 * Load a presentation file
+	 * @param presentation The presentation
+	 * @param filename The name of the file
+	 * @throws IOException Exception that is thrown when loading the file fails
+	 */
 	public void loadFile(Presentation presentation, String filename) throws IOException {
 		int slideNumber, itemNumber, max, maxItems;
 		try {
@@ -72,6 +77,11 @@ public class XMLAccessor extends Accessor
 		}	
 	}
 
+	/**
+	 * Load a slide item
+	 * @param slide The slide
+	 * @param item The item in the slide
+	 */
 	protected void loadSlideItem(Slide slide, Element item) {
 		int level = 1;
 		NamedNodeMap attributes = item.getAttributes();
@@ -98,6 +108,12 @@ public class XMLAccessor extends Accessor
 		}
 	}
 
+	/**
+	 * Save a presentation
+	 * @param presentation The presentation
+	 * @param filename The name of the file
+	 * @throws IOException The exception that is thrown when saving fails
+	 */
 	public void saveFile(Presentation presentation, String filename) throws IOException {
 		PrintWriter out = new PrintWriter(new FileWriter(filename));
 		out.println("<?xml version=\"1.0\"?>");

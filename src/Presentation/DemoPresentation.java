@@ -16,7 +16,11 @@ import Slide.Slide;
 
 public class DemoPresentation extends Accessor
 {
-
+	/**
+	 * Load a presentation
+	 * @param presentation The presentation that has to be loaded
+	 * @param unusedFilename A file name (in this case unused)
+	 */
 	public void loadFile(Presentation presentation, String unusedFilename) {
 		presentation.setTitle("Demo Presentation");
 		Slide slide;
@@ -55,6 +59,11 @@ public class DemoPresentation extends Accessor
 		presentation.append(slide);
 	}
 
+	/**
+	 * Save a presentation
+	 * @param presentation The presentation that has to be saved
+	 * @param unusedFilename A file name (in this case unused)
+	 */
 	public void saveFile(Presentation presentation, String unusedFilename) {
 		throw new IllegalStateException("Save As->Demo! aangeroepen");
 	}
