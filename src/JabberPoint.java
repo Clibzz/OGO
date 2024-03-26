@@ -1,8 +1,7 @@
-import Accessors.Accessor;
 import Presentation.Presentation;
 import Slide.SlideViewerFrame;
-import Style.Style;
-import Accessors.XMLAccessor;
+import Style.*;
+import Accessors.*;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -25,11 +24,10 @@ public class JabberPoint {
 	protected static final String IOERR = "IO Error: ";
 	protected static final String JABERR = "Jabberpoint Error ";
 	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
-
-	/** Het Main Programma */
+	
 	public static void main(String[] argv) {
 		
-		Style.createStyles();
+		StyleFactory.createStyles();
 		Presentation presentation = new Presentation();
 		new SlideViewerFrame(JABVERSION, presentation);
 		try {
