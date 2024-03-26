@@ -1,14 +1,12 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Rectangle;
-import java.io.Serial;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
+package Slide;
+
+import Presentation.*;
+
+import javax.swing.*;
+import java.awt.*;
 
 
-/** <p>SlideViewerComponent is a graphical component that ca display Slides.</p>
+/** <p>SlideViewerComponent is een grafische component die Slides kan laten zien.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -20,12 +18,11 @@ import javax.swing.JFrame;
 
 public class SlideViewerComponent extends JComponent {
 		
-	private Slide slide; //The current slide
-	private final Font labelFont; //The font for labels
-	private Presentation presentation; //The presentation
+	private Slide slide;
+	private final Font labelFont;
+	private Presentation presentation;
 	private final JFrame frame;
 	
-	@Serial
 	private static final long serialVersionUID = 227L;
 	
 	private static final Color BGCOLOR = Color.white;
@@ -43,10 +40,19 @@ public class SlideViewerComponent extends JComponent {
 		this.frame = frame;
 	}
 
+	/**
+	 * Get the preferred size of the dimension
+	 * @return The Dimension with the preferred size
+	 */
 	public Dimension getPreferredSize() {
-		return new Dimension(Slide.WIDTH, Slide.HEIGHT);
+		return new Dimension(Slide.getWidth(), Slide.getHeight());
 	}
 
+	/**
+	 * Update the data of a slide
+	 * @param presentation The presentation of which the slide is part of
+	 * @param data The slide
+	 */
 	public void update(Presentation presentation, Slide data) {
 		if (data == null) {
 			repaint();
@@ -55,20 +61,24 @@ public class SlideViewerComponent extends JComponent {
 		this.presentation = presentation;
 		this.slide = data;
 		repaint();
-		frame.setTitle(presentation.getTitle());
+		this.frame.setTitle(presentation.getTitle());
 	}
 
-	//Draw the slide
+	/**
+	 * Paint the SlideViewerComponent
+	 * @param g the <code>Graphics</code> object to protect
+	 */
 	public void paintComponent(Graphics g) {
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);
-		if (presentation.getSlideNumber() >= 0 && slide != null) {
-			g.setFont(labelFont);
-			g.setColor(COLOR);
-			g.drawString("Slide " + (1 + presentation.getSlideNumber()) + " of " +
-					presentation.getSize(), XPOS, YPOS);
-			Rectangle area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
-			slide.draw(g, area, this);
+		if (this.presentation.getSlideNumber() < 0 || this.slide == null) {
+			return;
 		}
+		g.setFont(this.labelFont);
+		g.setColor(COLOR);
+		g.drawString("Slide " + (1 + this.presentation.getSlideNumber()) + " of " +
+				this.presentation.getSize(), XPOS, YPOS);
+		Rectangle area = new Rectangle(0, YPOS, getWidth(), (getHeight() - YPOS));
+		this.slide.draw(g, area, this);
 	}
 }

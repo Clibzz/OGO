@@ -1,9 +1,13 @@
+package Accessors;
+
+import Presentation.*;
+
 import java.io.IOException;
 
 /**
- * <p>An Accessor makes it possible to read and write data
- * for a presentation.</p>
- * <p>Non-abstract subclasses should implement the load and save methods.</p>
+ * <p>Een Accessor maakt het mogelijk om gegevens voor een presentatie
+ * te lezen of te schrijven.</p>
+ * <p>Niet-abstracte subklassen moeten de load en de save methode implementeren.</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -22,8 +26,20 @@ public abstract class Accessor {
 	public Accessor() {
 	}
 
+	/**
+	 * Load a presentation file
+	 * @param p The presentation
+	 * @param fn The file name
+	 * @throws IOException Throws when a file can not be loaded
+	 */
 	abstract public void loadFile(Presentation p, String fn) throws IOException;
 
+	/**
+	 * Save a presentation file
+	 * @param p The presentation
+	 * @param fn The file name
+	 * @throws IOException Throws when a file can not be saved
+	 */
 	abstract public void saveFile(Presentation p, String fn) throws IOException;
 
 }

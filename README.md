@@ -1,16 +1,21 @@
 # OGO
 
-De veranderingen die ik heb gemaakt zijn als volgt:
-- Ik heb de bug in de go to functionaliteit opgelost die ervoor zorgde dat een gebruiker naar een niet bestaande pagina kan navigeren.
-- In plaats van een style klasse te creeren in de style klasse zelf, heb ik besloten hier een factory voor te maken.
-- Constructors, methoden en fields die niet gebruikt worden, zijn verwijderd
-- Verwijderen van onnodige casts
-- Lambda in plaats van sommige actionlisteners in MenuController
-- Textblock about page ipv constant \n
-- Final fields waar dit van toepassing is
-- Toevoegen van this. in verschillende klasses
-- Toevoegen van serial annotation
-- Verwijderen van overbodige initialisatie van velden
-- For loops i.p.v. iterators, omdat dit netter is
-- Nullcheck fix in SlideViewerComponent
-- Toevoegen van StyleFactory
+For this class, I had to refactor the software called JabberPoint.
+All of the changes that have been made, are listed in the document that has been added to this repository.
+
+Author: Chris
+
+## Changes
+I have added a document in the "docs" folder of this repository. This document contains all of the changes that have been made to improve the source code of JabberPoint.
+
+To have a closer look at the classdiagrams, check the .png files in the "img" folder.
+
+## Start up
+To start this project, you have to follow the steps below:
+
+- Clone this repository;
+- Once cloned, open the project in Intellij;
+- Once opened, go to the package JabberPoint which contains JabberPoint.java;
+- In the JabberPoint class, click on the play-icon next to the "main"-method.
+
+

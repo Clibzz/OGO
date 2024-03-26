@@ -1,8 +1,14 @@
-import javax.swing.JOptionPane;
+package JabberPoint;
 
+import Presentation.Presentation;
+import Slide.SlideViewerFrame;
+import Style.*;
+import Accessors.*;
+
+import javax.swing.*;
 import java.io.IOException;
 
-/** JabberPoint Main Program
+/** JabberPoint Main Programma
  * <p>This program is distributed under the terms of the accompanying
  * COPYRIGHT.txt file (which is NOT the GNU General Public License).
  * Please read it. Your use of the software constitutes acceptance
@@ -21,16 +27,13 @@ public class JabberPoint {
 	protected static final String JABERR = "Jabberpoint Error ";
 	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
 
-	/** The main program */
 	public static void main(String[] argv) {
-
-		for (int i = 0; i < 5; i++) {
-			StyleFactory.createStyles(i);
-		}
+		
+		StyleFactory.createStyles();
 		Presentation presentation = new Presentation();
 		new SlideViewerFrame(JABVERSION, presentation);
 		try {
-			if (argv.length == 0) { //a demo presentation
+			if (argv.length == 0) {
 				Accessor.getDemoAccessor().loadFile(presentation, "");
 			} else {
 				new XMLAccessor().loadFile(presentation, argv[0]);
@@ -41,5 +44,13 @@ public class JabberPoint {
 					IOERR + ex, JABERR,
 					JOptionPane.ERROR_MESSAGE);
 		}
+	}
+
+	/**
+	 * Close the application
+	 * @param n The exit code
+	 */
+	public static void exit(int n) {
+		System.exit(n);
 	}
 }

@@ -1,11 +1,17 @@
-import java.awt.Dimension;
-import java.awt.event.WindowEvent;
+package Slide;
+
+import JabberPoint.JabberPoint;
+import Menu.*;
+import Presentation.*;
+import Util.*;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
-import java.io.Serial;
-import javax.swing.JFrame;
+import java.awt.event.WindowEvent;
 
 /**
- * <p>The applicatiewindow for a slideviewcomponent</p>
+ * <p>Het applicatiewindow voor een slideviewcomponent</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
  * @version 1.2 2003/11/19 Sylvia Stuurman
@@ -16,12 +22,11 @@ import javax.swing.JFrame;
 */
 
 public class SlideViewerFrame extends JFrame {
-	@Serial
 	private static final long serialVersionUID = 3227L;
 	
 	private static final String JABTITLE = "Jabberpoint 1.6 - OU";
-	public final static int WIDTH = 1200;
-	public final static int HEIGHT = 800;
+	private final static int WIDTH = 1200;
+	private final static int HEIGHT = 800;
 	
 	public SlideViewerFrame(String title, Presentation presentation) {
 		super(title);
@@ -30,19 +35,23 @@ public class SlideViewerFrame extends JFrame {
 		setupWindow(slideViewerComponent, presentation);
 	}
 
-    //Set up the GUI
+	/**
+	 * Set up the GUI
+	 * @param slideViewerComponent The SlideViewerComponent
+	 * @param presentation The presentation
+	 */
 	public void setupWindow(SlideViewerComponent 
 			slideViewerComponent, Presentation presentation) {
 		setTitle(JABTITLE);
 		addWindowListener(new WindowAdapter() {
 				public void windowClosing(WindowEvent e) {
-					System.exit(0);
+					JabberPoint.exit(0);
 				}
 			});
 		getContentPane().add(slideViewerComponent);
-		addKeyListener(new KeyController(presentation)); //Add a controller
-		setMenuBar(new MenuController(this, presentation));	//Add another controller
-		setSize(new Dimension(WIDTH, HEIGHT)); //Same sizes a slide has
+		addKeyListener(new KeyController(presentation));
+		setMenuBar(new MenuController(this, presentation));
+		setSize(new Dimension(WIDTH, HEIGHT));
 		setVisible(true);
 	}
 }
