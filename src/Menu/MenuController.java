@@ -110,9 +110,20 @@ public class MenuController extends MenuBar {
 	 * @return The slide number as integer
 	 */
 	private int getSlideNumberFromInput() {
-		String slideNumber = JOptionPane.showInputDialog(PAGENR);
-		return Integer.parseInt(slideNumber);
-	}
+		try {
+			String slideNumber = JOptionPane.showInputDialog(PAGENR);
+			if (Integer.parseInt(slideNumber) != 0) {
+				return Integer.parseInt(slideNumber);
+			}
+		} catch (Exception ex) {
+			JOptionPane.showMessageDialog(parent,
+					"Please enter a number!",
+					"Number error",
+					JOptionPane.INFORMATION_MESSAGE
+			);
+		}
+        return 0;
+    }
 
 	/**
 	 * Method to build the view menu with all its items

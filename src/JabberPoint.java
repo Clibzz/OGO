@@ -24,7 +24,7 @@ public class JabberPoint {
 	protected static final String IOERR = "IO Error: ";
 	protected static final String JABERR = "Jabberpoint Error ";
 	protected static final String JABVERSION = "Jabberpoint 1.6 - OU version";
-	
+
 	public static void main(String[] argv) {
 		
 		StyleFactory.createStyles();
