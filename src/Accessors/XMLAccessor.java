@@ -18,6 +18,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static Accessors.XMLAccessorLabels.*;
+
 /** XMLAccessor, reads and writes XML files
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
  * @version 1.1 2002/12/17 Gert Florijn
@@ -42,17 +44,17 @@ public class XMLAccessor extends Accessor
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();    
 			Document document = builder.parse(new File(filename));
 			Element doc = document.getDocumentElement();
-			presentation.setTitle(getTitle(doc, XMLAccessorLabels.SHOWTITLE));
+			presentation.setTitle(getTitle(doc, SHOWTITLE));
 
-			NodeList slides = doc.getElementsByTagName(XMLAccessorLabels.SLIDE);
+			NodeList slides = doc.getElementsByTagName(SLIDE);
 			max = slides.getLength();
 			for (slideNumber = 0; slideNumber < max; slideNumber++) {
 				Element xmlSlide = (Element) slides.item(slideNumber);
 				Slide slide = new Slide();
-				slide.setTitle(getTitle(xmlSlide, XMLAccessorLabels.SLIDETITLE));
+				slide.setTitle(getTitle(xmlSlide, SLIDETITLE));
 				presentation.append(slide);
 				
-				NodeList slideItems = xmlSlide.getElementsByTagName(XMLAccessorLabels.ITEM);
+				NodeList slideItems = xmlSlide.getElementsByTagName(ITEM);
 				maxItems = slideItems.getLength();
 				for (itemNumber = 0; itemNumber < maxItems; itemNumber++) {
 					Element item = (Element) slideItems.item(itemNumber);
@@ -67,32 +69,32 @@ public class XMLAccessor extends Accessor
 			System.err.println(sax.getMessage());
 		}
 		catch (ParserConfigurationException pcx) {
-			System.err.println(XMLAccessorLabels.PCE);
+			System.err.println(PCE);
 		}	
 	}
 
 	protected void loadSlideItem(Slide slide, Element item) {
 		int level = 1;
 		NamedNodeMap attributes = item.getAttributes();
-		String levelText = attributes.getNamedItem(XMLAccessorLabels.LEVEL).getTextContent();
+		String levelText = attributes.getNamedItem(LEVEL).getTextContent();
 		if (levelText != null) {
 			try {
 				level = Integer.parseInt(levelText);
 			}
 			catch(NumberFormatException x) {
-				System.err.println(XMLAccessorLabels.NFE);
+				System.err.println(NFE);
 			}
 		}
-		String type = attributes.getNamedItem(XMLAccessorLabels.KIND).getTextContent();
-		if (XMLAccessorLabels.TEXT.equals(type)) {
+		String type = attributes.getNamedItem(KIND).getTextContent();
+		if (TEXT.equals(type)) {
 			slide.append(new TextItem(level, item.getTextContent()));
 		}
 		else {
-			if (XMLAccessorLabels.IMAGE.equals(type)) {
+			if (IMAGE.equals(type)) {
 				slide.append(new BitmapItem(level, item.getTextContent()));
 			}
 			else {
-				System.err.println(XMLAccessorLabels.UNKNOWNTYPE);
+				System.err.println(UNKNOWNTYPE);
 			}
 		}
 	}

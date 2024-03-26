@@ -25,6 +25,13 @@ public class Style {
 	private final int fontSize;
 	private final int leading;
 
+	public Style(int indent, Color color, int points, int leading) {
+		this.indent = indent;
+		this.color = color;
+		this.font = new Font(FONTNAME, Font.BOLD, fontSize=points);
+		this.leading = leading;
+	}
+
 	public static void createStyles() {
 		styles = new Style[5];
 		styles[0] = new Style(0, Color.red,   48, 20);
@@ -53,18 +60,11 @@ public class Style {
 		return styles[level];
 	}
 
-	public Style(int indent, Color color, int points, int leading) {
-		this.indent = indent;
-		this.color = color;
-		this.font = new Font(FONTNAME, Font.BOLD, fontSize=points);
-		this.leading = leading;
+	public Font getFont(float scale) {
+		return this.font.deriveFont(this.fontSize * scale);
 	}
 
 	public String toString() {
 		return "["+ this.indent + "," + this.color + "; " + this.fontSize + " on " + this.leading +"]";
-	}
-
-	public Font getFont(float scale) {
-		return this.font.deriveFont(this.fontSize * scale);
 	}
 }

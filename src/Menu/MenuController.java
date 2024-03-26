@@ -8,6 +8,7 @@ import Util.AboutBox;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import static Menu.MenuLabels.*;
 
 /** <p>De controller voor het menu</p>
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman
@@ -62,10 +63,10 @@ public class MenuController extends MenuBar {
 	private void saveFile() {
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
-			xmlAccessor.saveFile(presentation, MenuLabels.SAVEFILE);
+			xmlAccessor.saveFile(presentation, SAVEFILE);
 		} catch (IOException exc) {
-			JOptionPane.showMessageDialog(parent, MenuLabels.IOEX + exc,
-					MenuLabels.SAVEERR, JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(parent, IOEX + exc,
+					SAVEERR, JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -76,11 +77,11 @@ public class MenuController extends MenuBar {
 		presentation.clear();
 		Accessor xmlAccessor = new XMLAccessor();
 		try {
-			xmlAccessor.loadFile(presentation, MenuLabels.TESTFILE);
+			xmlAccessor.loadFile(presentation, TESTFILE);
 			presentation.setSlideNumber(0);
 			parent.repaint();
 		} catch (IOException ex) {
-			JOptionPane.showMessageDialog(parent, MenuLabels.IOEX + ex, MenuLabels.LOADERR, JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(parent, IOEX + ex, LOADERR, JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -96,11 +97,11 @@ public class MenuController extends MenuBar {
 	 * Build the file menu with all its items
 	 */
 	private void buildFileMenu() {
-		Menu fileMenu = new Menu(MenuLabels.FILE);
-		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.OPEN), this::openPresentation));
-		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.NEW), this::newPresentation));
-		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.SAVE), this::saveFile));
-		fileMenu.add(createMenuItem(mkMenuItem(MenuLabels.EXIT), () -> presentation.exit(0)));
+		Menu fileMenu = new Menu(FILE);
+		fileMenu.add(createMenuItem(mkMenuItem(OPEN), this::openPresentation));
+		fileMenu.add(createMenuItem(mkMenuItem(NEW), this::newPresentation));
+		fileMenu.add(createMenuItem(mkMenuItem(SAVE), this::saveFile));
+		fileMenu.add(createMenuItem(mkMenuItem(EXIT), () -> presentation.exit(0)));
 		add(fileMenu);
 	}
 
@@ -109,7 +110,7 @@ public class MenuController extends MenuBar {
 	 * @return The slide number as integer
 	 */
 	private int getSlideNumberFromInput() {
-		String slideNumber = JOptionPane.showInputDialog(MenuLabels.PAGENR);
+		String slideNumber = JOptionPane.showInputDialog(PAGENR);
 		return Integer.parseInt(slideNumber);
 	}
 
@@ -117,10 +118,10 @@ public class MenuController extends MenuBar {
 	 * Method to build the view menu with all its items
 	 */
 	private void buildViewMenu() {
-		Menu viewMenu = new Menu(MenuLabels.VIEW);
-		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.NEXT), presentation::nextSlide));
-		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.PREV), presentation::prevSlide));
-		viewMenu.add(createMenuItem(mkMenuItem(MenuLabels.GOTO), () -> presentation.setSlideNumber(getSlideNumberFromInput() - 1)));
+		Menu viewMenu = new Menu(VIEW);
+		viewMenu.add(createMenuItem(mkMenuItem(NEXT), presentation::nextSlide));
+		viewMenu.add(createMenuItem(mkMenuItem(PREV), presentation::prevSlide));
+		viewMenu.add(createMenuItem(mkMenuItem(GOTO), () -> presentation.setSlideNumber(getSlideNumberFromInput() - 1)));
 		add(viewMenu);
 	}
 
@@ -128,8 +129,8 @@ public class MenuController extends MenuBar {
 	 * Method to build the help menu with all its items
 	 */
 	private void buildHelpMenu() {
-		Menu helpMenu = new Menu(MenuLabels.HELP);
-		helpMenu.add(createMenuItem(mkMenuItem(MenuLabels.ABOUT), () -> AboutBox.show(parent)));
+		Menu helpMenu = new Menu(HELP);
+		helpMenu.add(createMenuItem(mkMenuItem(ABOUT), () -> AboutBox.show(parent)));
 		setHelpMenu(helpMenu);
 	}
 }

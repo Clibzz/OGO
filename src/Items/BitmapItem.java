@@ -28,7 +28,7 @@ public class BitmapItem extends SlideItem
   private final String imageName;
   
   protected static final String FILE = "Bestand ";
-  protected static final String NOTFOUND = " niet gevonden";
+  protected static final String NOTFOUND = " Niet gevonden";
 
 	public BitmapItem(int level, String name) {
 		super(level);
