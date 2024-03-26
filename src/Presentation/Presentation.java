@@ -123,12 +123,4 @@ public class Presentation {
 	public ArrayList<Slide> getSlides() {
 		return this.showList;
 	}
-
-	/**
-	 * Close the application
-	 * @param n The exit code
-	 */
-	public void exit(int n) {
-		System.exit(n);
-	}
 }

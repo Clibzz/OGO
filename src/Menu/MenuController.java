@@ -1,9 +1,9 @@
 package Menu;
 
-import Accessors.Accessor;
-import Accessors.XMLAccessor;
+import Accessors.*;
 import Presentation.Presentation;
 import Util.AboutBox;
+import JabberPoint.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -97,11 +97,12 @@ public class MenuController extends MenuBar {
 	 * Build the file menu with all its items
 	 */
 	private void buildFileMenu() {
+		JabberPoint jabberPoint = new JabberPoint();
 		Menu fileMenu = new Menu(FILE);
 		fileMenu.add(createMenuItem(mkMenuItem(OPEN), this::openPresentation));
 		fileMenu.add(createMenuItem(mkMenuItem(NEW), this::newPresentation));
 		fileMenu.add(createMenuItem(mkMenuItem(SAVE), this::saveFile));
-		fileMenu.add(createMenuItem(mkMenuItem(EXIT), () -> presentation.exit(0)));
+		fileMenu.add(createMenuItem(mkMenuItem(EXIT), () -> jabberPoint.exit(0)));
 		add(fileMenu);
 	}
 

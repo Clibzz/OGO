@@ -1,3 +1,5 @@
+package JabberPoint;
+
 import Presentation.Presentation;
 import Slide.SlideViewerFrame;
 import Style.*;
@@ -42,5 +44,13 @@ public class JabberPoint {
 					IOERR + ex, JABERR,
 					JOptionPane.ERROR_MESSAGE);
 		}
+	}
+
+	/**
+	 * Close the application
+	 * @param n The exit code
+	 */
+	public void exit(int n) {
+		System.exit(n);
 	}
 }
