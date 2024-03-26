@@ -1,3 +1,8 @@
+package Slide;
+
+import Style.Style;
+import Items.*;
+
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.ImageObserver;
@@ -20,7 +25,7 @@ public class Slide {
 	protected Vector<SlideItem> items; // de slide-items worden in een Vector bewaard
 
 	public Slide() {
-		items = new Vector<SlideItem>();
+		items = new Vector<>();
 	}
 
 	public static int getWidth() {

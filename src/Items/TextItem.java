@@ -1,3 +1,8 @@
+package Items;
+
+import Slide.*;
+import Style.Style;
+
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -23,28 +28,25 @@ import java.util.ArrayList;
  * @version 1.6 2014/05/16 Sylvia Stuurman
  */
 
-public class TextItem extends SlideItem {
+public class TextItem extends SlideItem
+{
 	private final String text;
 
-// een textitem van level level, met als tekst string
 	public TextItem(int level, String string) {
 		super(level);
 		this.text = string;
 	}
 
-// Geef de tekst
 	public String getText() {
 		return this.text == null ? "" : this.text;
 	}
 
-// geef de AttributedString voor het item
 	public AttributedString getAttributedString(Style style, float scale) {
 		AttributedString attrStr = new AttributedString(getText());
 		attrStr.addAttribute(TextAttribute.FONT, style.getFont(scale), 0, this.text.length());
 		return attrStr;
 	}
 
-// geef de bounding box van het item
 	public Rectangle getBoundingBox(Graphics g, ImageObserver observer, 
 			float scale, Style myStyle) {
 		List<TextLayout> layouts = getLayouts(g, myStyle, scale);
@@ -62,7 +64,6 @@ public class TextItem extends SlideItem {
 		return new Rectangle((int) (myStyle.getIndent() * scale), 0, xsize, ysize );
 	}
 
-// teken het item
 	public void draw(int x, int y, float scale, Graphics g, 
 			Style myStyle, ImageObserver o) {
 		if (this.text == null || this.text.isEmpty()) {

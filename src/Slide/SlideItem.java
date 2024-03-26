@@ -1,3 +1,7 @@
+package Slide;
+
+import Style.Style;
+
 import java.awt.Rectangle;
 import java.awt.Graphics;
 import java.awt.image.ImageObserver;
@@ -14,22 +18,28 @@ import java.awt.image.ImageObserver;
 */
 
 public abstract class SlideItem {
-	private final int level; // het level van het slideitem
+	private final int level;
 
 	public SlideItem(int lev) {
 		this.level = lev;
 	}
 
-// Geef het level
 	public int getLevel() {
 		return this.level;
 	}
 
-// Geef de bounding box
 	public abstract Rectangle getBoundingBox(Graphics g, 
 			ImageObserver observer, float scale, Style style);
 
-// teken het item
+	/**
+	 * Draw the item
+	 * @param x The x-coordinate
+	 * @param y The y-coordinate
+	 * @param scale The scaling factor that's applied to the object
+	 * @param g The graphics context
+	 * @param style The style that's applied to the object
+	 * @param observer  The image observer that tracks changes
+	 */
 	public abstract void draw(int x, int y, float scale, 
 			Graphics g, Style style, ImageObserver observer);
 }

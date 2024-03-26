@@ -1,10 +1,9 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Rectangle;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
+package Slide;
+
+import Presentation.*;
+
+import javax.swing.*;
+import java.awt.*;
 
 
 /** <p>SlideViewerComponent is een grafische component die Slides kan laten zien.</p>
@@ -56,7 +55,6 @@ public class SlideViewerComponent extends JComponent {
 		frame.setTitle(presentation.getTitle());
 	}
 
-// teken de slide
 	public void paintComponent(Graphics g) {
 		g.setColor(BGCOLOR);
 		g.fillRect(0, 0, getSize().width, getSize().height);

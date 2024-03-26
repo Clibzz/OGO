@@ -1,3 +1,7 @@
+package Presentation;
+
+import Slide.*;
+
 import java.util.ArrayList;
 
 /**

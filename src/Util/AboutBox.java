@@ -1,5 +1,7 @@
-import java.awt.Frame;
-import javax.swing.JOptionPane;
+package Util;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**De About-box voor JabberPoint.
  * @author Ian F. Darwin, ian@darwinsys.com, Gert Florijn, Sylvia Stuurman

@@ -1,7 +1,13 @@
-import java.awt.Dimension;
-import java.awt.event.WindowEvent;
+package Slide;
+
+import Menu.*;
+import Presentation.*;
+import Util.*;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
-import javax.swing.JFrame;
+import java.awt.event.WindowEvent;
 
 /**
  * <p>Het applicatiewindow voor een slideviewcomponent</p>
@@ -28,7 +34,11 @@ public class SlideViewerFrame extends JFrame {
 		setupWindow(slideViewerComponent, presentation);
 	}
 
-// De GUI opzetten
+	/**
+	 * Set up the GUI
+	 * @param slideViewerComponent The SlideViewerComponent
+	 * @param presentation The presentation
+	 */
 	public void setupWindow(SlideViewerComponent 
 			slideViewerComponent, Presentation presentation) {
 		setTitle(JABTITLE);

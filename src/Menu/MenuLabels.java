@@ -1,3 +1,5 @@
+package Menu;
+
 public class MenuLabels {
     protected static final String ABOUT = "About";
     protected static final String FILE = "File";
@@ -11,10 +13,8 @@ public class MenuLabels {
     protected static final String PREV = "Prev";
     protected static final String SAVE = "Save";
     protected static final String VIEW = "View";
-
     protected static final String TESTFILE = "test.xml";
     protected static final String SAVEFILE = "dump.xml";
-
     protected static final String IOEX = "IO Exception: ";
     protected static final String LOADERR = "Load Error";
     protected static final String SAVEERR = "Save Error";
